@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ENGLISH JANALA</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <style>
+        .poppins{
+            font-family: "Poppins", sans-serif;
+        }
+
+        .active {
+            background: #422AD5;
+            color: white;
+        }
+        
+        .lesson-img:hover img{
+            filter: brightness(0) invert();
+        }
+        .active img{
+            filter: brightness(0) invert();
+        }
+    </style>
+</head>
+<body class="poppins text-[#18181B]">
+    <header class="border-[#C6BDBD] shadow-sm bg-linear-to-r from-[rgba(255,255,255,0.3)] to-[rgba(0,0,0,0)] fixed top-0 left-0 w-full z-[999]" id="header">
+        <div class="md:container navbar justify-between mx-auto px-[10px] lg:px-0 flex-col lg:flex-row">
+            <div class="navbar-start flex-1">
+                <a class="flex text-base lg:text-xl items-center" href="/">English <img src="./assets/logo.png" alt=""> জানালা</a>
+            </div>
+            <div class="navbar-end justify-center lg:justify-end text-right gap-[20px]">
+                <a class="btn border-[#422AD5] border-rounded-xs text-[#422AD5] text-base" href="#faq"><img src="./assets/fa-circle-question.png" alt="">FAQ</a>
+                <a class="btn border-[#422AD5] rounded-xs text-[#422AD5] text-base" href="#learn"><img src="./assets/fa-book-open.png" alt="">Learn</a>
+                <a  id="logout" class="btn border-[#422AD5] rounded-xs text-[#422AD5] text-base"><img src="./assets/fa-arrow-right-from-bracket.png" alt="">Logout</a>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="md:container flex lg:flex-row flex-col mx-auto items-center gap-[10px] lg:gap-[100px] my-[100px] px-[10px] lg:px-0" id="banner">
+            <div class="flex-0 lg:flex-1">
+                <h1 class="text-xl lg:text-4xl font-bold mb-[20px]"><span class="text-[#00BCFF]">English</span> is Easy!!</h1>
+                <p class="text-base lg:text-2xl mb-[10px]">আজ থেকেই আপনার ভাষা শেখার যাত্রা শুরু করুন। আপনি যদি নতুন হন অথবা আপনার দক্ষতা বাড়াতে চান, আমাদের Interactive Lessons আপনাকে নিয়ে যাবে অন্য একটি Level এ</p>
+                <input type="text" id="name" class="text-sm lg:text-base w-[320px] border-[rgba(24,24,27,.5)] rounded-sm p-[10px] my-[10px]" placeholder="Enter Your Name" autocomplete="off"><br>
+                <input type="password" id="password" class="text-sm lg:text-base w-[320px] border-[rgba(24,24,27,.5)] rounded-sm p-[10px] my-[10px]" placeholder=".........."><br>
+                <button class="bg-[#422AD5] text-white rounded-sm p-[10px] mt-[10px]" id="submit">Get Started</button>
+            </div>
+            <div class="flex-0 lg:flex-1">
+                <img src="./assets/hero-student.png" class="">
+            </div>
+        </section>
+
+        <section id="learn" class="md:container mx-auto items-center my-[100px] px-[10px] lg:px-0">
+            <h1 class="text-xl lg:text-4xl font-bold pt-[100px] lg:pt-[80px] mb-[20px] text-center"><span class="text-[#00BCFF]">Let's</span> Learn Vocabularies</h1>
+
+            <div id="lessoncat-container" class="flex flex-wrap justify-center gap-[10px] navbar mx-auto">
+            </div>
+          
+            <div id="loader" class="text-center py-10 hidden">
+                <span class="loading loading-spinner loading-xs"></span>
+            </div>
+
+            <div class="bg-[#F8F8F8] py-[20px] mx-auto grid grid-cols-1 lg:grid-cols-3 gap-[20px] px-[20px]" id="lesson-container">
+                <div class="col-span-3">
+                    <p class="text-sm lg:text-base text-center leading-[24px] w-full">আপনি এখনো কোন Lesson Select করেন নি</p>
+                    <p class="text-xl lg:text-3xl text-center leading-[40px] font-medium w-full">একটি Lesson Select করুন।</p>
+                </div>
+            </div>
+
+        </section>
+
+        <section id="faq" class="md:container mx-auto items-center my-[100px] px-[10px] lg:px-0">
+            <h1 class="text-xl lg:text-4xl font-bold pt-[100px] lg:pt-[80px] mb-[20px] text-center"><span class="text-[#00BCFF]">Frequently</span> Asked Questions</h1>
+            <div class="collapse collapse-plus bg-[#F8F8F8] border-[#F8F8F8] rounded-2xl my-[20px]">
+                <input type="radio" name="my-accordion-3" checked="checked" />
+                <div class="collapse-title font-semibold">Whis is the difference between var, let, and const?</div>
+                <div class="collapse-content text-sm">var & let value can reassign but const value can not reassign. var is function scope but let & const is block scope.</div>
+            </div>
+            <div class="collapse collapse-plus bg-[#F8F8F8] border-[#F8F8F8] rounded-2xl mb-[20px]">
+                <input type="radio" name="my-accordion-3" checked="checked" />
+                <div class="collapse-title font-semibold">Whis is the difference between map(), forEach(), and filter()?
+                </div>
+                <div class="collapse-content text-sm">Using map() can make new array element from original array. forEach() do not return anything but can execute function. Using filter() can make new array from original array with specific condition.</div>
+            </div>
+            <div class="collapse collapse-plus bg-[#F8F8F8] border-[#F8F8F8] rounded-2xl mb-[20px]">
+                <input type="radio" name="my-accordion-3" checked="checked" />
+                <div class="collapse-title font-semibold">Explain arrow functions and how they are different from regular functions?
+                </div>
+                <div class="collapse-content text-sm">Arrow function have shorter code & introduced in ES6. Arrow fuction do not have own arguments but regular function have own arguments.</div>
+            </div>
+            <div class="collapse collapse-plus bg-[#F8F8F8] border-[#F8F8F8] rounded-2xl mb-[20px]">
+                <input type="radio" name="my-accordion-3" checked="checked" />
+                <div class="collapse-title font-semibold">How JavaScript Promises work?</div>
+                <div class="collapse-content text-sm">Promise work in three state pending, fulfilled, rejected.</div>
+            </div>
+            <div class="collapse collapse-plus bg-[#F8F8F8] border-[#F8F8F8] rounded-2xl mb-[20px]">
+                <input type="radio" name="my-accordion-3" checked="checked" />
+                <div class="collapse-title font-semibold">How closures work in JavaScript?</div>
+                <div class="collapse-content text-sm">Closure allow inner function access to outer function.</div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="mx-auto border-t-[#FFEBEB] border-t-2 items-center  py-[50px]">
+        <div class="md:container flex mx-auto justify-between flex-col lg:flex-row px-[10px] lg:px-0">
+            <div class="text-center lg:text-left">
+                <a href="/" class="text-base lg:text-xl font-semibold flex items-center justify-center lg:justify-start">English <img src="./assets/logo.png" alt=""> জানালা</a>
+                <p class="text-base lg:text-xl font-medium">ইংরেজি শিখুন সহজে</p>
+                <p>Providing ED-Tech Applications since 2025</p>
+            </div>
+            <div class="justify-center lg:justify-end">
+                <p class="text-sm lg:text-base leading-10 font-semibold text-center lg:text-left">Follow us</p>
+                <div class="flex gap-[20px] justify-center lg:self-end">
+                    <a href="https://www.facebook.com" target="_blank"><img src="./assets/fb-thumb.png" alt="Facebook" class="h-[20px] w-auto"></a>
+                    <a href="https://www.youtube.com" target="_blank"><img src="./assets/youtube-thumb.png" alt="Youtube" class="h-[20px] w-auto"></a>
+                    <a href="https://www.instagram.com" target="_blank"><img src="./assets/instagram-thumb.png" alt="Instagram" class="h-[20px] w-auto"></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <dialog id="lesson-details" class="modal">
+        <div class="modal-box">
+            <div id="details-container"></div>
+            <div class="modal-action justify-start">
+                <form method="dialog">
+                    <button class="btn bg-[#422AD5] text-white rounded-lg">Complete Learning</button>
+                </form>
+            </div>
+        </div>
+    </dialog>
+    <script src="./script.js"></script>
+</body>
+</html>
