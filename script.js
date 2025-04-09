@@ -122,7 +122,7 @@ const loadLessonDetails = (lessonId) => {
     detailsContainer.innerHTML = `
         <div class="card border-[#EDF7FF] rounded-sm border-2">
             <div class="card-body">
-            <h2 class="card-title font-semibold text-xl lg:text-2xl leading-[40px]">${word.word} (<img src="../assets/mic.png" class="w-[20px]"> ${word.pronunciation})</h2>
+            <h2 class="card-title font-semibold text-xl lg:text-2xl leading-[40px]">${word.word} (<img src="./assets/mic.png" class="w-[20px]"> ${word.pronunciation})</h2>
             <h6 class="card-title font-semibold text-base lg:text-xl mt-[10px]">Meaning</h6>
             <p class="card-title text-base lg:text-xl">${meaning}</p>
             <h6 class="text-base font-medium lg:text-lg mt-[10px]">Example</h6>
@@ -141,7 +141,7 @@ function displayLessonsList(lessons) {
       const categoryDiv = document.createElement("div");
   
       categoryDiv.innerHTML = `
-      <button id="btn-${cat.level_no}"  onclick="loadLessonList(${cat.level_no})" class="btn border-[#422AD5] rounded-[4px] text-[#422AD5] hover:bg-[#422AD5]  hover:text-white mx-[10px] lesson-img"><img src="../assets/fa-book-open.png"> Lesson ${cat.level_no}</button>
+      <button id="btn-${cat.level_no}"  onclick="loadLessonList(${cat.level_no})" class="btn border-[#422AD5] rounded-[4px] text-[#422AD5] hover:bg-[#422AD5]  hover:text-white mx-[10px] lesson-img"><img src="./assets/fa-book-open.png"> Lesson ${cat.level_no}</button>
       `;
   
       categoryContainer.append(categoryDiv);
@@ -197,8 +197,8 @@ const displayLessons = (lessons) => {
                 <p>Meaning / Pronunciation</p>
                 <h6>"${meaning} / ${pronunciation}"</h6>
                 <div class="flex justify-between w-full px-[10%]">
-                    <button class="btn justify-start bg-[rgba(26,145,255,0.1)] p-[10px] rounded-sm hover:bg-white border-0" onclick="loadLessonDetails(${lesson.id})" ><img src="../assets/info.png" class="w-[20px]"></button>
-                    <button class="btn justify-start bg-[rgba(26,145,255,0.1)] p-[10px] rounded-sm hover:bg-white border-0" onclick="pronounceWord('${lesson.word}')" ><img src="../assets/volume-up.png" class="w-[20px]"></button>
+                    <button class="btn justify-start bg-[rgba(26,145,255,0.1)] p-[10px] rounded-sm hover:bg-white border-0" onclick="loadLessonDetails(${lesson.id})" ><img src="./assets/info.png" class="w-[20px]"></button>
+                    <button class="btn justify-start bg-[rgba(26,145,255,0.1)] p-[10px] rounded-sm hover:bg-white border-0" onclick="pronounceWord('${lesson.word}')" ><img src="./assets/volume-up.png" class="w-[20px]"></button>
                 </div>
             </div>
         </div>
